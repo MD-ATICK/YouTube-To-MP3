@@ -8,7 +8,7 @@ import { PulseLoader } from 'react-spinners'
 function App() {
 
   const [Loading, setLoading] = useState(false);
-  const [LinkYT, setLinkYT] = useState('https://youtu.be/oGg3kzoR6lw');
+  const [LinkYT, setLinkYT] = useState('');
   const [urlResult, seturlResult] = useState('');
 
   const SearchHanlder = async () => {
@@ -38,11 +38,11 @@ function App() {
 
   return (
     <div className=' h-screen flex flex-col text-white justify-center items-center p-10 md:p-14 w-full bg-pink-800'>
-      <h1 className='text-[25px] md:text-[35px] font-[500]'>YouTube to MP3 Converter</h1>
-      <p className='text-[13px] md:text-[14px] font-[400] leading-7 tracking-wide text-center'>Lorem sit sicing elit. atick vai Quasi dicta optio sed omnis iste.</p>
-      <input value={LinkYT} onChange={(e) => setLinkYT(e.target.value)} type="text" className='mt-6 text-[15px] rounded-md py-2 px-4 font-sans tracking-wide font-[500] placeholder:text-stone-500 text-black outline-none w-[400px]' placeholder='Enter a YouTube Url ...' />
-      <button onClick={SearchHanlder} className='bg-sky-800 py-2 px-6 rounded-md outline-none shadow-sm shadow-white hover:scale-105 duration-150 mt-4' >Search</button>
-      {Loading ? <div className='mt-10' ><PulseLoader color='white' /> </div> : urlResult && <a target='_blank' rel='noreferrer' href={urlResult} className=' underline font-sans tracking-wide mt-10'>Download MP3</a>}
+      <h1 className='text-[30px] md:text-[35px] font-[500]'>YouTube to MP3 Converter</h1>
+      <p className='text-[15px] md:text-[14px] py-4 mb-3 font-[400] leading-7 tracking-wide text-center'>Tranforms your choose youtube video to Mp3. We want you be Happy.</p>
+      <input value={LinkYT} onChange={(e) => setLinkYT(e.target.value)} type="text" className='mt-6 text-[15px] rounded-md py-3 px-4 font-sans tracking-wide font-[500] placeholder:text-stone-500 text-black outline-none w-[350px]' placeholder='Enter a YouTube Url ...' />
+      <button onClick={SearchHanlder} className='bg-sky-700 py-3 px-8 rounded-lg outline-none shadow-sm shadow-white hover:scale-105 duration-150 mt-8' >Search</button>
+      {Loading ? <div className='mt-12' ><PulseLoader color='white' /> </div> : urlResult && <a target='_blank' rel='noreferrer' href={urlResult} className=' underline font-sans tracking-wide mt-12'>Download MP3</a>}
     </div>
   )
 }
